@@ -9,7 +9,7 @@
     color: #333; 
   }
   body.home {
-    background-image: url('imagenes/veterinarias-cucuta.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('veterinarias-cucuta.jpg'); /* Asegúrate de que la ruta sea correcta */
     background-size: contain; /* Ajusta la imagen sin cubrir toda la pantalla */
     background-position: center center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
