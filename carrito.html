@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="stylecarrito.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Carrito de Compras</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="nosotros">
+    <div class="container">
+  <div class="section-image">
+    <img src="imagenes/carrito.jpg" class="img-fluid">
+</div>
+
+
+  <main>
+    <h2>Tu Carrito</h2>
+    <div id="lista-carrito"></div>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tienda de Mascotas. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function formatPrice(value) {
+      return `$${parseFloat(value).toLocaleString('es-CO', { minimumFractionDigits: 0 })}`;
+    }
+
+    function mostrarCarrito() {
+      const listaCarrito = document.getElementById('lista-carrito');
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      if (carrito.length === 0) {
+        listaCarrito.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+      }
+
+      // Mostrar productos con imagen, nombre y precio en formato colombiano
+      listaCarrito.innerHTML = carrito.map(producto => {
+        const precioFormateado = formatPrice(producto.precio);
+        return `
+          <div class="producto-en-carrito">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div>
+              <p><strong>${producto.nombre}</strong></p>
+              <p>Precio: ${precioFormateado}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Calcular total
+      const total = carrito.reduce((sum, producto) => sum + parseFloat(producto.precio), 0);
+      listaCarrito.innerHTML += `<p><strong>Total: ${formatPrice(total)}</strong></p>`;
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem('carrito');
+      mostrarCarrito();
+    }
+
+    mostrarCarrito();
+  </script>
+</body>
+</html>

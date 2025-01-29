@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - Tienda para Mascotas</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+   
+
+</head>
+<body>
+  <header>
+    
+    <h1>Productos para tu Mascota</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+       
+        <li><a href="contacto.html">Contacto</a></li>
+       
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
+
+    
+  </header>
+
+  <main>
+    
+    <h2>Explora nuestros productos</h2>
+    <div class="galeria-productos">
+
+      <!-- Producto 1 -->
+      <div class="producto" data-nombre="Alimento para gato" data-precio="69999">
+        <img src="imagenes/producto1.jpg" alt="Alimento para gato">
+        <h3>Alimento para gato</h3>
+        <p>Bonnat Gato Adulto 1.5kg</p>
+        <p class="precio">$69.999</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="producto" data-nombre="Alimento para perro" data-precio="62182">
+        <img src="imagenes/producto2.jpg" alt="Alimento para perro">
+        <h3>Alimento para perro</h3>
+        <p>AAgility Gold Grandes Adultos 3 Kg</p>
+        <p class="precio">$62.182</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="producto" data-nombre="Collar para mascota" data-precio="29900">
+        <img src="imagenes/collar.jpg" alt="Collar para perro">
+        <h3>Collar para Mascota</h3>
+        <p>Minnie & Mickey: Collar Para Mascotas Con Encanto Disney Color Rojo</p>
+        <p class="precio">$29.900</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="producto" data-nombre="Gorro para mascota" data-precio="90000">
+        <img src="imagenes/gorro.jpg" alt="Gorro para mascota">
+        <h3>Gorro para mascota</h3>
+        <p>Gorro Y Bufanda Rojo Tejidos - Navidad Mascotas</p>
+        <p class="precio">$90.000</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="producto" data-nombre="Kit de baño" data-precio="197372">
+        <img src="imagenes/kitdebaño.jpg" alt="Kit de baño para mascotas">
+        <h3>Kit de Baño</h3>
+        <p>Kit De Baño Para Mascotas, 10 Patrones De Pulverización</p>
+        <p class="precio">$197.372</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="producto" data-nombre="Cama para mascota" data-precio="94990">
+        <img src="imagenes/cama.jpg" alt="Cama para mascotas">
+        <h3>Cama para Perro</h3>
+        <p>Cama Almohadón Ultrasuave Antiestrés Para Mascota</p>
+        <p class="precio">$94.990</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+
+       <!-- Producto 7 -->
+       <div class="producto" data-nombre="peine electrico" data-precio="94990">
+        <img src="imagenes/peine.jpg" alt="peine para mascota">
+        <h3>Peine para Pulgas</h3>
+        <p>El peine eléctrico mata las pulgas de las mascotas y elimina el pelo y los piojos</p>
+        <p class="precio">$16.364</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+
+
+       <!-- Producto 8-->
+       <div class="producto" data-nombre="Glucosamina para mascota" data-precio="94990">
+        <img src="imagenes/glucosamina.jpg" alt="vitamina para mascotas">
+        <h3>Vitamina Glucosamina</h3>
+        <p>Cosequin 180 Tab Perros Mascotas Glucosamina Condroitina Msm</p>
+        <p class="precio">$210.140</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+       <!-- Producto 9 -->
+       <div class="producto" data-nombre="Galleta para perro" data-precio="94990">
+        <img src="imagenes/galleta.jpg" alt="galleta para mascotas">
+        <h3>Galleta para perro</h3>
+        <p>Galletas Para Mascota Vitacruch</p>
+        <p class="precio">$42.102</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+       <!-- Producto 10-->
+       <div class="producto" data-nombre="pastilla para mascota" data-precio="94990">
+        <img src="imagenes/pastilla.jpg" alt="pastilla para perro">
+        <h3>Pastilla Nexgard</h3>
+        <p>Nexgard Spectra 7.5 A 15 Kg</p>
+        <p class="precio">$60.336</p>
+        <button onclick="comprarProducto(this)">Comprar</button>
+      </div>
+
+       
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tienda de Mascotas. Todos los derechos reservados.</p>
+  </footer>
+
+
+  <script> function comprarProducto(boton) { 
+    const producto = boton.closest('.producto'); 
+    const nombre = producto.dataset.nombre; 
+    const precio = producto.dataset.precio;
+
+ // Ruta correcta desde 'imagenes/' 
+     const imagen = producto.querySelector('img').src;
+    
+     // Guardar en localStorage 
+     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio, imagen });
+       localStorage.setItem('carrito', JSON.stringify(carrito)); 
+     
+     // Redirigir al carrito 
+     window.location.href = 'carrito.html'; }
+  
+
+ 
+</script>
+  
+  
+</body>
+</html>

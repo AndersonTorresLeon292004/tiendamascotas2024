@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Películas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .peliculas {
+            list-style: none;
+            padding: 0;
+        }
+        .peliculas li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selecciona tus películas favoritas</h1>
+    <form action="#" method="post">
+        <ul class="peliculas">
+            <li>
+                <input type="checkbox" id="pelicula1" name="peliculas[]" value="El Padrino">
+                <label for="pelicula1">El Padrino</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pelicula2" name="peliculas[]" value="El Señor de los Anillos">
+                <label for="pelicula2">El Señor de los Anillos</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pelicula3" name="peliculas[]" value="Titanic">
+                <label for="pelicula3">Titanic</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pelicula4" name="peliculas[]" value="Inception">
+                <label for="pelicula4">Inception</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pelicula5" name="peliculas[]" value="Matrix">
+                <label for="pelicula5">Matrix</label>
+            </li>
+        </ul>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

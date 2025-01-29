@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contacto - Tienda de Productos para Mascotas</title>
+  <link rel="stylesheet" href="stylecontacto.css">
+</head>
+<body>
+  
+
+  <header class="contact-header">
+    <h1>¡Estamos Aquí Para Ayudar a Tu Mascota!</h1>
+    <p>¿Tienes preguntas sobre nuestros productos o necesitas ayuda con tu compra? No dudes en contactarnos. ¡Estaremos encantados de ayudarte!</p>
+  </header>
+
+  <!-- Formulario de contacto -->
+  <section class="contact-form">
+    <h2>Contáctanos</h2>
+    <form action="/enviar" method="POST">
+      <div class="form-group">
+        <label for="nombre">Tu nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Tu correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Escribe tu correo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Tu número de teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu número" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Tu mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje o pregunta" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Enviar Consulta</button>
+    </form>
+  </section>
+
+  <!-- Información adicional (teléfono, email, redes sociales) -->
+  <section class="contact-info">
+    <h2>Otras Formas de Contactarnos</h2>
+    <div class="info-item">
+      <p><strong>Teléfono:</strong> +573023661582 - +573243873930</p>
+    </div>
+    <div class="info-item">
+      <p><strong>Email:</strong> contacto@tiendaparamascotas.com</p>
+    </div>
+    <div class="info-item">
+      <p><strong>Redes Sociales:</strong> 
+        <a href="https://www.facebook.com/groups/569207594425083/announcements" target="_blank">Facebook</a>, 
+        <a href="https://www.instagram.com/nutri.friend_/" target="_blank">Instagram</a>
+      </p>
+    </div>
+    <div class="info-item">
+      <p><strong>Dirección:</strong>  Ciudad:cucuta</p>
+    </div>
+  </section>
+
+  <!-- Mapa de ubicación (si aplica) -->
+  <section class="map">
+    <h2>Visítanos en nuestra tienda</h2>
+    <!-- Mapa de Cúcuta, Colombia -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.2382557876195!2d-72.5066715!3d7.8931437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e67e70370c1f77b%3A0xeffb1b5f116a62b0!2sC%C3%BAcuta%2C%20Norte%20de%20Santander!5e0!3m2!1ses-419!2sco!4v1633892129738!5m2!1ses-419!2sco" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+  
+
+  <!-- Testimonios de clientes -->
+  <section class="testimonials">
+    <h2>Opiniones </h2>
+    <div class="testimonial">
+      <p>"Excelente atención y productos de calidad para mi perro. ¡Mi mascota nunca estuvo tan feliz!"</p>
+      <p><strong>- Anderson T.</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"¡A mis gatos les encantan los juguetes que compré aquí! Muy buen servicio."</p>
+      <p><strong>- Melany G.</strong></p>
+    </div>
+  </section>
+
+  <!-- Llamado a la acción (CTA) -->
+  <section class="cta">
+    <h2>¡Haz feliz a tu mascota hoy mismo!</h2>
+    <a href="productos.html" class="btn-cta">Nuestros productos</a>
+    <a href="index.html" class="btn-cta">Inicio</a>
+  
+    <a href="Nosotros.html" class="btn-cta">Nosotros</a>
+  </section>
+
+</body>
+</html>
